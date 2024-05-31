@@ -16,8 +16,10 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 # 👽PruebaTecnicaPlus1
 
-Este proyecto ha sido desplegado en  [prueba-tecnica-plus1.netlify.app](https://main--prueba-tecnica-plus1.netlify.app/) version 1.1.15.
+Este proyecto ha sido desplegado en 
+* 🚀[prueba-tecnica-plus1.netlify.app](https://main--prueba-tecnica-plus1.netlify.app/) version 1.1.15.
 
 ## 👨‍🚀Authors
 
-- 🚀🚀🚀[@elvistirado](https://www.elvis.tirado.com)
+- [@elvistirado](https://www.elvis.tirado.com)
+- [linkedin]([https://www.elvis.tirado.com](https://www.linkedin.com/in/elvis-tirado-466259174/))
