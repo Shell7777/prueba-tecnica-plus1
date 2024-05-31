@@ -20,4 +20,4 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 # PruebaTecnicaPlus1
 
-Este proyecto ha sido desplegado en  [Angular CLI]([prueba-tecnica-plus1.netlify.app](https://main--prueba-tecnica-plus1.netlify.app/)) version 1.1.15.
+Este proyecto ha sido desplegado en  [prueba-tecnica-plus1.netlify.app](https://main--prueba-tecnica-plus1.netlify.app/) version 1.1.15.
