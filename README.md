@@ -13,11 +13,15 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Se agrego recaptcha de google para mayor seguridad 
-## Se agrego firebase con FIRESTORE  de google para mayor seguridad 
-## Se agrego dockerfile para despliegues futuros
+## Mejoras 
+* Se agrego recaptcha de google para mayor seguridad 
+* Se agrego firebase con FIRESTORE  de google para mayor seguridad 
+* Se agrego dockerfile para despliegues futuros
 
 # PruebaTecnicaPlus1
 
 Este proyecto ha sido desplegado en  [prueba-tecnica-plus1.netlify.app](https://main--prueba-tecnica-plus1.netlify.app/) version 1.1.15.
+
+## Authors
+
+- [@elvistirado](https://www.elvis.tirado.com)
