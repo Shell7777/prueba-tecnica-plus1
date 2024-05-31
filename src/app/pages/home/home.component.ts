@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl,Validators } from '@angular/forms';
+import { FirebaseService } from 'src/app/shared/services/firebase.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,13 +8,18 @@ import { FormBuilder, FormGroup, FormControl,Validators } from '@angular/forms';
 })
 export class HomeComponent {
   form: any;
+  sitekey: string = '6LcxyO0pAAAAAO8EKx19Ip5p7-0e4HK-g9CIgIRJ'
+  esregistrado:boolean = false;
+
   favoritos: any = [
     {text: 'Pollo, Cerdo, Embutidos', value: 'COMIDA'},
     {text: 'Capitan América, Iroman, Hulk', value: 'MARVEL'},
     {text: 'Flash, Superman, Aquaman', value: 'DC'},
   ];
   constructor(
-    private formBuilder: FormBuilder) {
+    private formBuilder: FormBuilder,
+    private firebaseService: FirebaseService
+  ) {
     this.buildForm();
   }
   buildForm() {
@@ -35,15 +41,18 @@ export class HomeComponent {
       favoritos: ['',
         [Validators.required]],
       aceptaUsoDatos: [false, Validators.requiredTrue],
-      aceptaterminos: [false, Validators.requiredTrue]
+      aceptaterminos: [false, Validators.requiredTrue],
+      recaptcha: ['', Validators.required]
     });
   }
-  enviarFormulario(event:Event){
+  async enviarFormulario(event:Event){
     event.preventDefault();
     if (this.form.valid){
       const value = this.form.value;
-      console.log(value);
-      
+      const response = await this.firebaseService.addPerson(value);
+      this.esregistrado=true;
+    }else {
+      this.form.markAllAsTouched();
     }
   }
 
