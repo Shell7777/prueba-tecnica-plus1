@@ -1,0 +1,22 @@
+.font-futura{
+    font-family: 'src/assets/fonts/FuturaStd.otf', sans-serif;
+  }
+
+  .underline-custom {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .underline-custom::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px; /* Ajusta la posición vertical del subrayado */
+    width: 100%;
+    height: 20px; /* Ajusta la altura del subrayado según el tamaño del SVG */
+    background-image: url('src/assets/svg/underline-1.svg'); /* Ruta al archivo SVG */
+    background-size: contain; /* Ajusta el tamaño del SVG dentro del subrayado */
+    background-repeat: no-repeat; /* Evita la repetición del SVG */
+  }
+
+

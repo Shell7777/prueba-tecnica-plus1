@@ -1,0 +1,194 @@
+<app-header></app-header>
+<article class="bg-primary text-white w-full flex flex-row flex-start flex-wrap px-20 pb-40 ">
+    <div class="w-full flex flex-col sm:w-1/2">
+        <div class="font-futura w-full pb-10 animate__animated  animate__slideInUp">
+            <div class="flex flex-row items-center mb-4">
+                <img src="assets/images/descuento.png" class="h-12" />
+                <p class="ml-5">ES HORA DE </p>
+            </div>
+            <p class=" font-bold text-7xl">
+                CYBER DAYS <br>
+                <span class="text-4xl mr-1">EN</span>
+                <span class="font-bold underline-custom">Más uno</span>
+            </p>
+            <p class="mt-8">
+                Del
+                <span class="font-bold">28</span>
+                al
+                <span class="font-bold">30</span>
+                de marzo
+            </p>
+        </div>
+        <!--Cupon-->
+        <div class=" animate__animated  animate__slideInUp ">
+            <div class="bg-white text-black flex-col inline-block p-2">
+                <div class="border-dashed border-2 flex justify-center items-center flex-col border-primary rounded-md">
+                    <div class="underline-custom font-futura text-cupon font-medium text-3xl pt-5  text-center ">
+                        Regístrate y Obtén
+                    </div>
+                    <div class="font-futura flex flex-row py-5">
+                        <img src="/assets/images/porcentaje-10.png" class=" block w-8/12">
+                        <div class=" w-4/12">
+                            <p class="text-primary font-semibold block">
+                                En tu primera compra de <br />
+                            </p>
+                            <span class="text-cupon font-bold text-2xl  ">CYBER DAYS</span>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center justify-center px-8 pb-1">
+                        <p class="text-primary text-xs pb-4 ">Aplicamos el descuento mediante un código que se te eviará a tu
+                            correo
+                            registrado</p>
+                        <p class="text-primary text-xs  pb-4">Cupón válido del 28 al 30 de marzo</p>
+                        <p class="text-primary text-xs  pb-4">*Aplican términos y condiciones</p>
+                    </div>
+                </div>
+            </div>
+        </div>      
+    </div>
+    <!--formulario-->
+    <div class="animate__animated  animate__slideInUp  w-full md:pl-16 relative sm:basis-1/2">
+        <img src="assets/images/icono-form.png" class=" w-1/5 -right-8 absolute"/>
+        <form class="bg-white font-futura flex flex-row  mt-10 flex-wrap rounded-md p-6 example-form" [formGroup]="form">
+            
+            <div class="flex px-5 flex-col text-red-600 text-2xl w-full underline-custom font-bold mb-10 ">
+                <h2>Completa tus datos</h2>
+            </div>
+            <div class="flex flex-col w-full md:w-1/2 px-5">
+                <span class="text-black">Nombre</span>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <input type="text" matInput formControlName="nombre" placeholder="Ingrese sus nombres">
+
+                    <mat-error *ngIf="nombreField.hasError('maxlength') || 
+                                        nombreField.hasError('minlength') &&
+                                        !nombreField.hasError('required')">
+                        Por favor Ingrese un nombre válido
+                    </mat-error>
+                    <mat-error *ngIf="nombreField.hasError('required')">
+                        Nombre <strong>Es requerido</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="flex flex-col w-full md:w-1/2 px-5">
+                <span class="text-black">Apellidos</span>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <input type="text" matInput formControlName="apellido" placeholder="Ingrese sus apellidos">
+
+                    <mat-error *ngIf="apellidoField.hasError('maxlength') || 
+                                        apellidoField.hasError('minlength') &&
+                                        !apellidoField.hasError('required')">
+                        Por favor Ingrese un apellido válido
+                    </mat-error>
+                    <mat-error *ngIf="apellidoField.hasError('required')">
+                        Apellido <strong>Es requerido</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="flex flex-col w-full md:w-1/2 px-5">
+                <span class="text-black">Teléfono</span>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <input type="text" matInput formControlName="telefono" placeholder="Ingrese un telefono">
+
+                    <mat-error *ngIf="telefonoField.hasError('pattern')">
+                        Por favor Ingrese un Teléfono solo con números
+                    </mat-error>
+
+                    <mat-error *ngIf="telefonoField.hasError('maxlength') || 
+                                        telefonoField.hasError('minlength') &&
+                                        !telefonoField.hasError('required')">
+                        Por favor Ingrese un Teléfono válido entre 9 y 20 dígitos
+                    </mat-error>
+                    <mat-error *ngIf="telefonoField.hasError('required')">
+                        Teléfono <strong>Es requerido</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="flex flex-col w-full md:w-1/2 px-5">
+                <span class="text-black">Correo Electrónico</span>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <input type="text" matInput formControlName="correo" placeholder="Ingrese su correo electrónico">
+                    <mat-error *ngIf="correoField.hasError('email') && !correoField.hasError('required')">
+                        Por favor Ingrese un correo electrónico válido
+                    </mat-error>
+                    <mat-error *ngIf="correoField.hasError('required')">
+                        Correo electrónico <strong>Es requerido</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="flex flex-col w-full md:w-1/2 px-5">
+                <span class="text-black">Tus Favoritos</span>
+                <mat-form-field class="example-full-width" appearance="outline">
+                    <mat-select formControlName="favoritos" name="food" placeholder="Seleecione tus favoritios ">
+                        <mat-option *ngFor="let item of favoritos" value="item.value">
+                            {{item.text}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="favoritosField.hasError('required')">
+                        Fasvoritos <strong>Es requerido</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <mat-checkbox class="example-margin w-full" formControlName="aceptaUsoDatos">
+                Acepto uso de datos personales
+            </mat-checkbox>
+            <mat-error *ngIf="aceptaUsoDatosField.hasError('required')&&aceptaUsoDatosField.touched">
+                Debe aceptar el uso de datos personales
+            </mat-error>
+            <mat-checkbox class="example-margin w-full  " formControlName="aceptaterminos">
+                Acepto uso de datos personales
+            </mat-checkbox>
+            <mat-error *ngIf="aceptaUsoDatosField.hasError('required')&&aceptaUsoDatosField.touched">
+                Debe aceptar Términos y politicas de privacidad
+            </mat-error>
+            <div class="flex flex-row w-full px-5 justify-center">
+               <button class=" w-1/2 py-5 text-xl text-white bg-primary rounded-sm  ">Registrarme</button>
+            </div>
+            <div class="text-gray-500 text-xs pt-10 font-futura w-full text-center">
+                Aprovecha las mejores ofertas y descuentos en pollo, pavo, cerdo, congelados, embutidos
+                y mucho más. No te pierdas de nada estos Cyberdays registrándote y obteniendo grandes descuentos
+                exclusivos
+            </div>
+        </form>
+        
+    </div>
+    
+</article>
+<article class="flex flex-col justify-center px-20">
+    <div class="w-full flex flex-row flex-nowrap justify-center items-center py-10 px-10 ">
+        <div class="w-2/5 bg-primary h-1    " ></div>
+        <img class="w-28     "  src="assets/images/carita-happy.png" >
+        <div class="w-2/5 bg-primary h-1"></div>
+    </div>
+    <div class="w-full text-center">
+        <p class="text-primary underline-custom text-3xl py-6   font-bold">¿Cómo obtengo el descuento por Cyber Days?</p>
+        <p class="text-gray-500  text-xl py-6   font-semibold">Para adquirir nuestro descuento especial por Cyber Days sigue los siguientes pasos</p>
+    </div>
+    <div  class="w-full flex flex-row flex-wrap text-center">
+        <div class="w-full md:w-1/3 flex flex-col items-center">
+            <p class="text-primary  text-3xl font-bold">Paso 1</p>
+            <img class="w-1/2 py-6"  src="assets/svg/step-1.svg" >
+            <p class="text-primary py-6 text-3xl font-bold">Regístrate</p>
+            <p class="text-gray-500 py-6 text-xl w-1/2  font-semibold">Completa el formulario con tus datos personales y acepta los términos.</p>
+        </div>
+        <div class="w-full md:w-1/3 flex flex-col items-center">
+            <p class="text-primary  text-3xl font-bold">Paso 2</p>
+            <img class="w-1/2 py-6"  src="assets/svg/step-2.svg" >
+            <p class="text-primary py-6 text-3xl font-bold">Recibe un cupón</p>
+            <p class="text-gray-500 py-6 text-xl w-1/2  font-semibold">Recibirás un correo electrónico donde podrás ver el cupón de descuento.</p>
+        </div>
+            <div class="w-full md:w-1/3 flex flex-col items-center">
+                <p class="text-primary  text-3xl font-bold">Paso 3</p>
+                <img class="w-1/2 py-6"  src="assets/svg/step-3.svg" >
+                <p class="text-primary py-6 text-3xl font-bold">Empieza a ahorrar</p>
+                <p class="text-gray-500 py-6 text-xl w-1/2  font-semibold">¡Y listo! Podrás usarlo del 28 al 30 de Marzo por compras en nuestra tienda online.</p>
+            </div>
+  
+     
+    </div>
+    <div class="w-full flex flex-row flex-nowrap justify-center items-center  py-10 px-10 ">
+        <div class="w-2/5 bg-primary h-1    " ></div>
+        <img class="w-28     "  src="assets/images/carita-happy.png" >
+        <div class="w-2/5 bg-primary h-1"></div>
+    </div>
+</article>
+<app-footer></app-footer>
