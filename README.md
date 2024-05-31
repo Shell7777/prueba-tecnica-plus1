@@ -22,4 +22,4 @@ Este proyecto ha sido desplegado en
 ## 👨‍🚀Authors
 
 - [@elvistirado](https://www.elvis.tirado.com)
-- [linkedin]([https://www.elvis.tirado.com](https://www.linkedin.com/in/elvis-tirado-466259174/))
+- [linkedin]([https://www.elvis.tirado.com](https://www.linkedin.com/in/elvis-tirado-466259174/)
