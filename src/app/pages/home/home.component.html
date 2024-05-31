@@ -49,7 +49,7 @@
     <!--formulario-->
     <div class="animate__animated  animate__slideInUp  w-full md:pl-16 relative sm:basis-1/2">
         <img src="assets/images/icono-form.png" class=" w-1/5 -right-8 absolute"/>
-        <form class="bg-white font-futura flex flex-row  mt-10 flex-wrap rounded-md p-6 example-form" [formGroup]="form" (ngSubmit)="enviarFormulario($event)" *ngIf="!esregistrado" >
+        <form class="bg-white font-futura flex flex-row  mt-10 flex-wrap rounded-xl p-6 example-form" [formGroup]="form" (ngSubmit)="enviarFormulario($event)" *ngIf="!esregistrado" >
             
             <div class="flex px-5 flex-col text-red-600 text-2xl w-full underline-custom font-bold mb-10 ">
                 <h2>Completa tus datos</h2>
@@ -143,7 +143,7 @@
             <mat-checkbox class="example-margin w-full  " formControlName="aceptaterminos">
                 Acepto uso de datos personales
             </mat-checkbox>
-            <mat-error *ngIf="aceptaUsoDatosField.hasError('required')&&aceptaUsoDatosField.touched">
+            <mat-error *ngIf="aceptaterminosField.hasError('required')&&aceptaterminosField.touched">
                 Debe aceptar Términos y politicas de privacidad
             </mat-error>
             <div class="flex flex-row w-full px-5 justify-center">
@@ -202,8 +202,23 @@
         <div class="w-2/5 bg-primary h-1"></div>
     </div>
 </article>
-<article class="flex flex-col justify-center px-20">
-    <img src="assets/images/plus-1-white.png">
+<article class="flex flex-col  justify-center px-20 mx-10">
+    <img src="assets/images/plus-1-white.png" alt="plus" class="w-1/12  self-center object-cover"/>
+    <p class="text-primary text-3xl underline-custom font-bold my-16 self-center">Las mejores tecnologías en Más uno</p>
+    <div class="my-10">
+        <swiper-container   >
+            <swiper-slide *ngFor="let item of tecnologias">
+                <div class="flex flex-row">
+                    <div class="w-3/5 flex flex-col items-start justify-around px-4">
+                        <img src="assets/svg/star.svg">
+                        <h4 class="font-bold text-red-700 text-3xl">{{item.title}}</h4>
+                        <p class="text-black-700 text-xl">{{item.description}}</p>
+                        <a  [routerLink]="[item.url]" class="bg-primary text-white px-6 py-4  " >Ver Categoria</a> 
+                    </div>
+                    <img class="w-2/5" [src]="item.image">
+                </div>
+            </swiper-slide>
+          </swiper-container>
+    </div>
 </article>
-
 <app-footer></app-footer>

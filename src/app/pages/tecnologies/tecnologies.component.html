@@ -1,1 +1,29 @@
-<p>tecnologies works!</p>
+<app-header></app-header>
+<article class="flex flex-col">
+    <div class="relative bg-cover mb-20 bg-center h-1/3" [ngStyle]="{'background-image': 'url(' + this.data.background + ')'}">
+        <div class="absolute inset-0 bg-black opacity-70"></div>
+        <div class="relative flex items-center justify-center h-full">
+          <h1 class="text-white font-bold my-40 text-7xl">{{this.data.name}}</h1>
+        </div>
+      </div>
+    <h2 class="px-20  text-primary my-4 font-bold font-futura text-2xl">{{this.data.title1}}</h2>
+    <p class="px-20  text-justify my-5">{{this.data.description}}</p>
+    <h2 class="px-20 text-primary my-4 font-bold font-futura text-2xl">{{this.data.title2}}</h2>
+    <p class="px-20  text-justify my-5">{{this.data.description2}}</p>
+    <div class="px-20 w-full flex flex-row flex-nowrap justify-center items-center py-10  ">
+        <div class="w-2/5 bg-primary h-1    " ></div>
+        <img class="w-28     "  src="assets/images/carita-happy.png" >
+        <div class="w-2/5 bg-primary h-1"></div>
+    </div>
+    <div>
+        <h2 class="px-20 text-primary my-4 font-bold font-futura text-2xl">Galeria</h2>
+        <swiper-container   >
+            <swiper-slide *ngFor="let item of this.data.galeria">
+                <div class="flex flex-row justify-center">
+                    <img class="w-2/5" [src]="item">
+                </div>
+            </swiper-slide>
+          </swiper-container>
+    </div>
+</article>
+<app-footer></app-footer>
