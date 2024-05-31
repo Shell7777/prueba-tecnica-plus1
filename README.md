@@ -18,7 +18,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 * Se agrego firebase con FIRESTORE  de google para mayor seguridad 
 * Se agrego dockerfile para despliegues futuros
 
-# PruebaTecnicaPlus1
+# 👽PruebaTecnicaPlus1
 
 Este proyecto ha sido desplegado en  [prueba-tecnica-plus1.netlify.app](https://main--prueba-tecnica-plus1.netlify.app/) version 1.1.15.
 
